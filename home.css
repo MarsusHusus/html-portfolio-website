@@ -1,0 +1,22 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #BFBFCF;
+    animation: backgroundAnimation 10s ease infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #BFBFCF;
+    }
+    50% {
+        background-color: #adadc1;
+    }
+    100% {
+        background-color: #afafe1;
+    }
+}
