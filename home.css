@@ -1,8 +1,3 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -10,71 +5,89 @@ body {
     min-height: 100vh;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
 .nav {
     background-color: #323232;
     color: white;
-    padding: 50px;
+    padding: 10px 0px 20px 0px;
 }
 
 .nav button {
     border: none;
     background: none;
     color: white;
-    margin: 0 20px; /* Increase margin for wider screens */
-    font-size: 1rem; /* Normal font size */
+    margin: 0 3vw; /* Use viewport width for margin */
+    font-size: max(0.7rem, 1vw); /* Responsive font size */
+    padding: 8px 40px;
+}
+
+.nav .activated, .nav .not_activated {
+    color: white;
 }
 
 .nav .activated {
     background-color: #5A5971;
-    color: white;
-    padding: 10px;
 }
 
 .nav .not_activated {
     background-color: #39444F;
-    color: white; 
-    padding: 5px;
 }
 
 .nav button:hover {
-    background-color: #555; /* Change to the color you desire on hover */
-    color: white; /* Change text color on hover */
+    background-color: #555;
 }
 
 .nav button.menu-btn {
-    font-size: 1.5rem; /* Larger font size for burger menu button */
+    font-size: max(1rem, 1vw); /* Responsive font size */
 }
 
 .home {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Allow the image and article to take available space */
+    grid-template-columns: min-content auto;
     align-items: center;
-    padding-top: 50px;
-    padding-bottom: 200px; /* Add padding to the top */
-    position: relative; /* Set position to relative */
+    padding: 5vh 5vw; /* Responsive padding */
+    position: relative;
 }
 
 .img {
-    position: relative; /* Set position to relative to contain absolutely positioned buttons */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    width: 300px;
+    height: 50vh; /* Responsive height */
+    width: 50vh; /* Responsive width */
     overflow: hidden;
-    margin: 0 auto;
+    margin: 100px auto;
 }
 
 .img img {
-    width: 100%; /* Ensure the image fills its container horizontally */
-    height: 100%; /* Ensure the image fills its container vertically */
-    object-fit: cover; /* Maintain aspect ratio and cover container */
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    margin: 2vh; /* Responsive margin */
+    opacity: 0; /* Initially hide the image */
+    animation: fadeIn 1s ease forwards; /* Apply animation */
 }
 
-/* New CSS for buttons */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with 0 opacity */
+        transform: scale(0.8); /* Start slightly smaller */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+        transform: scale(1); /* End with original size */
+    }
+}
+
+
 .buttons {
     position: absolute;
-    bottom: 20px;
+    bottom: 2vh; /* Responsive distance from bottom */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -82,8 +95,8 @@ body {
 
 .button {
     display: inline-block;
-    margin-right: 10px; /* Add margin between buttons */
-    padding: 8px 20px;
+    margin-right: 2vw; /* Responsive margin */
+    padding: 1vh 2vw; /* Responsive padding */
     background-color: #5A5971;
     color: white;
     text-decoration: none;
@@ -91,8 +104,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-
-/* Change button background color on hover */
 .button:hover {
     background-color: #39444F;
 }
@@ -100,45 +111,61 @@ body {
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 20px;
+    gap: 1vw; /* Responsive gap */
+    padding: 2vh 5vw; /* Responsive padding */
     background-color: #323232;
 }
 
 .gallery img {
     width: 100%;
     height: auto;
-    max-height: 150px; /* Increase max-height to give images more height */
+    max-height: 30vh; /* Responsive max height */
     object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add transitions for smooth effect */
 }
 
-.article {
-    padding: 10px 20px; /* Adjust padding for narrow screens */
+.gallery img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    filter: brightness(120%); /* Add brightness effect */
+}
+
+article {
+    padding: 1vh 2vw; /* Responsive padding */
+    font-size: 1.4rem;
+    animation: fadeIn 1s ease forwards; /* Apply animation */
 }
 
 .footer {
-    background-color: #39444F; /* Change background color to avoid clash with gallery */
-    padding: 10px;
+    background-color: #39444F;
+    padding: 1vh 5vw; /* Responsive padding */
     text-align: center;
-    color: white; /* Change text color for better visibility */
+    color: white;
 }
 
-/* Media Queries */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
+    .nav button {
+        margin: 0 3vw; /* Use viewport width for margin */
+        font-size: max(0.7rem, 1vw); /* Responsive font size */
+        padding: 8px 20px;
+    }    
+}
+
+@media screen and (max-width: 920px) {
     .home {
-        grid-template-columns: 1fr; /* Adjust layout for narrow screens */
+        grid-template-columns: 1fr;
     }
-    
+
     .home .img {
-        margin-bottom: 20px; /* Add space between image and text */
+        margin-bottom: 2vh; /* Responsive margin */
     }
-    
+
     article {
-        padding: 10px 20px; /* Adjust padding for narrow screens */
+        padding: 1vh 5vw; /* Responsive padding */
     }
 
     .nav button {
-        font-size: 1rem; /* Decrease font size for narrow screens */
-        margin: 0 1px; /* Reduce margin for narrow screens */
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 11px 7px 11px 7px;
     }
 }
