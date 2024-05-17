@@ -20,7 +20,7 @@ body {
     border: none;
     background: none;
     color: white;
-    margin: 0 3.5vw; /* Use viewport width for margin */
+    margin: 0 3vw; /* Use viewport width for margin */
     font-size: max(0.7rem, 1vw); /* Responsive font size */
     padding: 8px 40px;
 }
@@ -167,7 +167,9 @@ article {
 
 /* Show the button when the user scrolls down */
 @media only screen and (min-width: 768px) {
-
+    .footer {
+        position: relative;
+    }
 }
 
 
@@ -180,42 +182,11 @@ article {
 }
 
 @media screen and (max-width: 920px) {
-    .home {
-        grid-template-columns: 1fr;
-    }
-
-    .home .img {
-        margin-bottom: 2vh; /* Responsive margin */
-    }
-
-    article {
-        padding: 1vh 5vw; /* Responsive padding */
-    }
-
+    
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 2.5vw; /* Responsive margin */
+        margin: 0 1vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-
-    .nav button {
-        font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 0vw; /* Responsive margin */
-        padding: 11px 7px 11px 7px;
-    }
-
-}
-
-@media screen and (max-width: 390px) {
-
-    .nav button {
-        font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 0vw; /* Responsive margin */
-        padding: 8px 2px 8px 2px;
     }
 
 }
