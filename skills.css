@@ -31,6 +31,7 @@ body {
 
 .nav .activated {
     background-color: #5A5971;
+    padding: 15px;
 }
 
 .nav .not_activated {
@@ -51,97 +52,65 @@ body {
     align-items: center;
     padding: 5vh 5vw; /* Responsive padding */
     position: relative;
+    overflow: hidden; /* Ensure the animation stays within the element */
 }
 
-.img {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh; /* Responsive height */
-    width: 50vh; /* Responsive width */
-    overflow: hidden;
-    margin: 100px auto;
-}
-
-.img img {
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
-    margin: 2vh; /* Responsive margin */
-    opacity: 0; /* Initially hide the image */
-    animation: fadeIn 1s ease forwards; /* Apply animation */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Start with 0 opacity */
-        transform: scale(0.8); /* Start slightly smaller */
-    }
-    to {
-        opacity: 1; /* End with full opacity */
-        transform: scale(1); /* End with original size */
-    }
-}
-
-
-.buttons {
+.home::after {
+    content: "";
     position: absolute;
-    bottom: 2vh; /* Responsive distance from bottom */
-    display: flex;
-    justify-content: center;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,rgb(224, 224, 249), rgb(255, 255, 255));
+    background-size: 400% 400%; /* Ensure the gradient covers the whole area */
+    animation: neon-animation 4s ease infinite; /* Adjust duration and timing function as needed */
+    z-index: -1; /* Ensure the gradient stays behind the content */
 }
 
-.button {
-    display: inline-block;
-    margin-right: 2vw; /* Responsive margin */
-    padding: 1vh 2vw; /* Responsive padding */
-    background-color: #5A5971;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    aspect-ratio: 1;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #39444F;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1vw; /* Responsive gap */
-    padding: 2vh 5vw; /* Responsive padding */
-    background-color: #323232;
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    max-height: 30vh; /* Responsive max height */
-    object-fit: cover;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Add transitions for smooth effect */
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    filter: brightness(120%); /* Add brightness effect */
-}
-
-article {
-    padding: 1vh 2vw; /* Responsive padding */
-    font-size: 1.4rem;
-    animation: fadeIn 1s ease forwards; /* Apply animation */
+@keyframes neon-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .footer {
-    background-color: #39444F;
+    background-color: #323232;
     padding: 1vh 5vw; /* Responsive padding */
     text-align: center;
     color: white;
 }
+
+/* Style for the scroll to top button */
+#scrollToTopBtn {
+    border: none;
+    background: none;
+    color: white;
+    margin: 0 3vw; /* Use viewport width for margin */
+    font-size: max(0.7rem, 1vw); /* Responsive font size */
+    padding: 8px 40px;
+    background-color: #39444F;
+    padding: 15px;
+    float: right;
+}
+
+#scrollToTopBtn:hover{
+    background-color: #5A5971;
+}
+
+/* Show the button when the user scrolls down */
+@media only screen and (min-width: 768px) {
+    .footer {
+        position: relative;
+    }
+}
+
 
 @media screen and (max-width: 1200px) {
     .nav button {
@@ -152,21 +121,11 @@ article {
 }
 
 @media screen and (max-width: 920px) {
-    .home {
-        grid-template-columns: 1fr;
-    }
-
-    .home .img {
-        margin-bottom: 2vh; /* Responsive margin */
-    }
-
-    article {
-        padding: 1vh 5vw; /* Responsive padding */
-    }
 
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 0vw; /* Responsive margin */
+        margin: 0 1vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
     }
+
 }

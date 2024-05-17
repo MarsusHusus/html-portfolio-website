@@ -82,17 +82,24 @@ body {
 
 
 .img {
+    height: 50vh; 
+    width: 50vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.img-and-btn{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; /* Responsive height */
-    width: 50vh; /* Responsive width */
-    overflow: hidden;
     margin: 100px auto;
+    flex-direction: column;
 }
 
-.img img {
+.img > img {
     width: 120%;
     height: 120%;
     object-fit: cover;
@@ -101,6 +108,13 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease forwards; /* Apply animation */
 }
+
+.social_buttons{
+    margin-top: 1vh;
+    padding-right: 10vw;
+    flex-wrap: nowrap;
+}
+
 
 @keyframes fadeIn {
     from {
@@ -165,10 +179,7 @@ article {
     background-color: #5A5971;
 }
 
-/* Show the button when the user scrolls down */
-@media only screen and (min-width: 768px) {
 
-}
 
 
 @media screen and (max-width: 1200px) {
@@ -177,6 +188,10 @@ article {
         font-size: max(0.7rem, 1vw); /* Responsive font size */
         padding: 8px 20px;
     }    
+    article {
+        margin-top: -15vh;
+    }
+
 }
 
 @media screen and (max-width: 920px) {
@@ -189,7 +204,7 @@ article {
     }
 
     article {
-        padding: 1vh 5vw; /* Responsive padding */
+        padding: 1vh 5vw;
     }
 
     .nav button {

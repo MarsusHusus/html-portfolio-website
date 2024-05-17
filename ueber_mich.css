@@ -6,8 +6,61 @@
 }
 
 body {
-    margin: 0;
+    margin: 0px;
     font-family: Arial, sans-serif;
+}
+
+/* Main Page grid */
+.home {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* Adjust the gap as needed */
+  }
+  
+  .row1 {
+    grid-column: 1 / -1; /* This spans the header across all columns */
+  }
+  
+  .column1 {
+    grid-column: 1;
+  }
+  
+  .column2 {
+    grid-column: 2;
+  }
+  
+
+/* Content */
+.img {
+    display: flex;
+    align-items: center;
+    height: 50vh; /* Responsive height */
+    width: 50vh; /* Responsive width */
+    overflow: hidden;
+    
+}
+
+.img img {
+    width: 60%;
+    height: 70%;
+    object-fit: cover;
+    margin: 2vh; /* Responsive margin */
+    opacity: 0; /* Initially hide the image */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease forwards; /* Apply animation */
+    float: left;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with 0 opacity */
+        transform: scale(0.8); /* Start slightly smaller */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+        transform: scale(1); /* End with original size */
+    }
 }
 
 .nav {
@@ -46,15 +99,6 @@ body {
     font-size: max(1rem, 1vw); /* Responsive font size */
 }
 
-.home {
-    display: grid;
-    grid-template-columns: min-content auto;
-    align-items: center;
-    padding: 5vh 5vw; /* Responsive padding */
-    position: relative;
-    overflow: hidden; /* Ensure the animation stays within the element */
-}
-
 .home::after {
     content: "";
     position: absolute;
@@ -78,67 +122,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-
-.img {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh; /* Responsive height */
-    width: 50vh; /* Responsive width */
-    overflow: hidden;
-    margin: 100px auto;
-}
-
-.img img {
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
-    margin: 2vh; /* Responsive margin */
-    opacity: 0; /* Initially hide the image */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease forwards; /* Apply animation */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Start with 0 opacity */
-        transform: scale(0.8); /* Start slightly smaller */
-    }
-    to {
-        opacity: 1; /* End with full opacity */
-        transform: scale(1); /* End with original size */
-    }
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1vw; /* Responsive gap */
-    padding: 2vh 5vw; /* Responsive padding */
-    background-color: #39444F;
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    max-height: 30vh; /* Responsive max height */
-    object-fit: cover;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, filter 0.3s ease; /* Add transitions for smooth effect */
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    filter: brightness(120%); /* Add brightness effect */
-}
-
-article {
-    padding: 1vh 2vw; /* Responsive padding */
-    font-size: 1.4rem;
-    animation: fadeIn 1s ease forwards; /* Apply animation */
 }
 
 .footer {
@@ -172,7 +155,6 @@ article {
     }
 }
 
-
 @media screen and (max-width: 1200px) {
     .nav button {
         margin: 0 3vw; /* Use viewport width for margin */
@@ -182,11 +164,9 @@ article {
 }
 
 @media screen and (max-width: 920px) {
-    
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 1vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
     }
-
 }
