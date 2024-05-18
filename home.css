@@ -40,6 +40,7 @@ body {
 
 .nav button:hover {
     background-color: #555;
+    cursor: pointer;
 }
 
 .nav button.menu-btn {
@@ -110,11 +111,21 @@ body {
 }
 
 .social_buttons{
+    display: flex;
     margin-top: 1vh;
     padding-right: 10vw;
     flex-wrap: nowrap;
 }
 
+.social_buttons button {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .social_buttons img {
+    width: 50px; /* Adjust the width to your preference */
+    height: 50px; /* Set height relative to width */
+  }
 
 @keyframes fadeIn {
     from {
@@ -135,7 +146,7 @@ body {
     background-color: #39444F;
 }
 
-.gallery img {
+.gallery img, video {
     width: 100%;
     height: auto;
     max-height: 30vh; /* Responsive max height */
@@ -144,7 +155,7 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease; /* Add transitions for smooth effect */
 }
 
-.gallery img:hover {
+.gallery img:hover, video:hover {
     transform: scale(1.05); /* Scale up on hover */
     filter: brightness(120%); /* Add brightness effect */
 }
@@ -177,9 +188,8 @@ article {
 
 #scrollToTopBtn:hover{
     background-color: #5A5971;
+    cursor: pointer;
 }
-
-
 
 
 @media screen and (max-width: 1200px) {

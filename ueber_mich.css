@@ -1,114 +1,28 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-body {
-    margin: 0px;
-    font-family: Arial, sans-serif;
-}
-
-/* Main Page grid */
-.home {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px; /* Adjust the gap as needed */
-  }
-  
-  .row1 {
-    grid-column: 1 / -1; /* This spans the header across all columns */
-  }
-  
-  .column1 {
-    grid-column: 1;
-  }
-  
-  .column2 {
-    grid-column: 2;
-  }
-  
-
-/* Content */
-.img {
-    display: flex;
-    align-items: center;
-    height: 50vh; /* Responsive height */
-    width: 50vh; /* Responsive width */
-    overflow: hidden;
-    
-}
-
-.img img {
-    width: 60%;
-    height: 70%;
-    object-fit: cover;
-    margin: 2vh; /* Responsive margin */
-    opacity: 0; /* Initially hide the image */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease forwards; /* Apply animation */
-    float: left;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Start with 0 opacity */
-        transform: scale(0.8); /* Start slightly smaller */
-    }
-    to {
-        opacity: 1; /* End with full opacity */
-        transform: scale(1); /* End with original size */
-    }
-}
-
-.nav {
-    background-color: #323232;
-    color: white;
-    padding: 10px 0px 20px 0px;
-}
-
-.nav button {
-    border: none;
-    background: none;
-    color: white;
-    margin: 0 3vw; /* Use viewport width for margin */
-    font-size: max(0.7rem, 1vw); /* Responsive font size */
-    padding: 8px 40px;
-}
-
-.nav .activated, .nav .not_activated {
-    color: white;
-}
-
-.nav .activated {
-    background-color: #5A5971;
-    padding: 15px;
-}
-
-.nav .not_activated {
-    background-color: #39444F;
-}
-
-.nav button:hover {
-    background-color: #555;
-}
-
-.nav button.menu-btn {
-    font-size: max(1rem, 1vw); /* Responsive font size */
-}
-
-.home::after {
+.grid::after {
     content: "";
-    position: absolute;
+    position: fixed; /* Use fixed positioning to ensure it covers the viewport */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg,rgb(224, 224, 249), rgb(255, 255, 255));
-    background-size: 400% 400%; /* Ensure the gradient covers the whole area */
-    animation: neon-animation 4s ease infinite; /* Adjust duration and timing function as needed */
+    height: 100vh; /* Cover the entire viewport height */
+    background: linear-gradient(45deg, rgb(199, 199, 230), rgb(255, 255, 255));
+    animation: neon-animation 4s ease infinite;
     z-index: -1; /* Ensure the gradient stays behind the content */
 }
 
@@ -124,6 +38,122 @@ body {
     }
 }
 
+/* Navigation Styles */
+.nav {
+    background-color: #323232;
+    color: white;
+    padding: 10px 0 20px 0;
+}
+
+.nav button {
+    border: none;
+    background: none;
+    color: white;
+    margin: 0 3vw;
+    font-size: max(0.7rem, 1vw);
+    padding: 8px 40px;
+}
+
+.nav .activated {
+    background-color: #5A5971;
+    padding: 15px;
+}
+
+.nav .not_activated {
+    background-color: #39444F;
+}
+
+.nav button:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.nav button.menu-btn {
+    font-size: max(1rem, 1vw);
+}
+
+/* Main Page Grid */
+.home {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.row1 {
+    grid-column: 1 / -1;
+    padding: 0;
+    margin: 0 5vw;
+    box-sizing: border-box;
+    width: calc(100% - 10vw);
+}
+
+.column1 {
+    grid-column: 1;
+    margin-left: 3vw;
+}
+
+/* Column 2 Stuff */
+.column2 {
+    grid-column: 2;
+    margin: 0 2vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project_article {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust width as needed */
+    margin-right: 20px; /* Adjust margin between items */
+    margin-bottom: 20px; /* Adjust margin bottom for spacing */
+    box-sizing: border-box;
+}
+
+.project_article p {
+    margin-bottom: 2vh; /* Add some space between paragraph and image */
+}
+
+.project_article img {
+    max-width: 100%; /* Ensure image doesn't exceed its container */
+}
+
+/* Content Styles */
+.img-text-container {
+    display: flex;
+    align-items: center;
+    height: 40vh;
+    width: 90%;
+    overflow: hidden;
+}
+
+.profile-img {
+    height: 40vh;
+    width: auto;
+    object-fit: cover;
+    margin-right: 40px;
+    opacity: 0; /* Initially hide the image */
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease forwards; /* Apply animation */
+}
+
+.project-img {
+    height: 20vh; /* Set the height to 20% of the viewport height */
+    width: auto; /* Let the width adjust automatically */
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with 0 opacity */
+        transform: scale(0.8); /* Start slightly smaller */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+        transform: scale(1); /* End with original size */
+    }
+}
+
+/* Footer Styles */
 .footer {
     background-color: #323232;
     padding: 1vh 5vw; /* Responsive padding */
@@ -136,19 +166,20 @@ body {
     border: none;
     background: none;
     color: white;
-    margin: 0 3vw; /* Use viewport width for margin */
-    font-size: max(0.7rem, 1vw); /* Responsive font size */
+    margin: 0 3vw;
+    font-size: max(0.7rem, 1vw);
     padding: 8px 40px;
     background-color: #39444F;
     padding: 15px;
     float: right;
 }
 
-#scrollToTopBtn:hover{
+#scrollToTopBtn:hover {
     background-color: #5A5971;
+    cursor: pointer;
 }
 
-/* Show the button when the user scrolls down */
+/* Media Queries */
 @media only screen and (min-width: 768px) {
     .footer {
         position: relative;
@@ -157,16 +188,42 @@ body {
 
 @media screen and (max-width: 1200px) {
     .nav button {
-        margin: 0 3vw; /* Use viewport width for margin */
-        font-size: max(0.7rem, 1vw); /* Responsive font size */
+        margin: 0 3vw;
+        font-size: max(0.7rem, 1vw);
         padding: 8px 20px;
-    }    
-}
-
-@media screen and (max-width: 920px) {
-    .nav button {
-        font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 1vw; /* Responsive margin */
-        padding: 11px 7px 11px 7px;
     }
 }
+
+@media screen and (max-width: 750px) {
+    .nav button {
+        font-size: max(1rem, 1vw);
+        margin: 0;
+        padding: 11px 2px;
+    }
+
+    .profile-img {
+        display: block;
+        margin-right: 0; /* Ensure no margin on the right when displayed as block */
+    }
+
+    .img-text-container {
+        display: block;
+    }
+
+    .img-text-container {
+        height: auto; /* Reset the height */
+    }
+
+    /* Ensure column1 and column2 stack under each other */
+    .column1 {
+        grid-column: 1 / -1; /* Span full width */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .column2 {
+        grid-column: 1 / -1; /* Span full width */
+        margin: 0; /* Reset margin */
+    }
+}
+
+

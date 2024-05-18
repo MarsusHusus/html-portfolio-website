@@ -40,6 +40,7 @@ body {
 
 .nav button:hover {
     background-color: #555;
+    cursor: pointer;
 }
 
 .nav button.menu-btn {
@@ -102,6 +103,7 @@ body {
 
 #scrollToTopBtn:hover{
     background-color: #5A5971;
+    cursor: pointer;
 }
 
 /* Show the button when the user scrolls down */
