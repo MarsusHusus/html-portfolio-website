@@ -8,21 +8,21 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    color: white;
 }
 
 .nav {
     background-color: #323232;
-    color: white;
     padding: 10px 0px 20px 0px;
 }
 
 .nav button {
     border: none;
     background: none;
-    color: white;
     margin: 0 3vw; /* Use viewport width for margin */
     font-size: max(0.7rem, 1vw); /* Responsive font size */
     padding: 8px 40px;
+    color: white;
 }
 
 .nav .activated, .nav .not_activated {
@@ -49,11 +49,87 @@ body {
 
 .home {
     display: grid;
-    grid-template-columns: min-content auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
     align-items: center;
-    padding: 5vh 5vw; /* Responsive padding */
+    padding: 15vh 5vw; /* Increased padding to make the main page higher */
+}
+
+/* Add keyframes for the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in animation to the skill boxes */
+.skill-box {
+    margin-top: 8vh;
     position: relative;
-    overflow: hidden; /* Ensure the animation stays within the element */
+    width: 100%;
+    height: 100%;
+    background-color: #39444F; /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.5s ease; /* Add transition for smooth color change */
+    animation: fadeIn 0.5s ease forwards; /* Apply the fade-in animation */
+}
+
+.big-box {
+    position: absolute;
+    top: calc(20vh + 10px); /* Position from top of viewport */
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95vw; /* Take up 90% of viewport width */
+    bottom: calc(50px + 5px); /* Position from bottom of viewport */
+    background-color: #262439; /* Background color of the big box */
+    z-index: 0; /* Ensure the big box is behind other content */
+    border-radius: 8px;
+}
+
+.small-box {
+    position: absolute;
+    top: 10px; /* Position from top of big box */
+    left: 10px; /* Position from left of big box */
+    width: 100px; /* Width of small box */
+    height: 50px; /* Height of small box */
+    background-color: #39444F; /* Background color of the small box */
+    z-index: 1; /* Ensure the small box is above the big box */
+    border-radius: 8px;
+    margin-top: -4vh;
+}
+
+.small-box p {
+    margin-left: 1vw;
+}
+
+.skill-box.opened {
+    background-color: #5A5971; /* Color for opened skill box */
+}
+
+.description {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #AEAEAE;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    color: black;
+}
+
+.skill {
+    font-size: 24px;
 }
 
 .home::after {
@@ -83,27 +159,7 @@ body {
 
 .footer {
     background-color: #323232;
-    padding: 1vh 5vw; /* Responsive padding */
-    text-align: center;
-    color: white;
-}
-
-/* Style for the scroll to top button */
-#scrollToTopBtn {
-    border: none;
-    background: none;
-    color: white;
-    margin: 0 3vw; /* Use viewport width for margin */
-    font-size: max(0.7rem, 1vw); /* Responsive font size */
-    padding: 8px 40px;
-    background-color: #39444F;
-    padding: 15px;
-    float: right;
-}
-
-#scrollToTopBtn:hover{
-    background-color: #5A5971;
-    cursor: pointer;
+    padding: 3vh 5vw; /* Responsive padding */
 }
 
 /* Show the button when the user scrolls down */
@@ -126,8 +182,36 @@ body {
 
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 1vw; /* Responsive margin */
+        margin: 0 2.5vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 11px 7px 11px 7px;
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 8px 2px 8px 2px;
+    }
+
+}
+
+@media screen and (max-height: 340px) {
+
+    .big-box {
+        display: none;
     }
 
 }

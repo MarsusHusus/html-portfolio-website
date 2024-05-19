@@ -233,6 +233,16 @@ article {
         padding: 11px 7px 11px 7px;
     }
 
+    .img {
+        height: 40vh; 
+        width: 40vh;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    
+
 }
 
 @media screen and (max-width: 390px) {

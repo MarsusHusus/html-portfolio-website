@@ -5,6 +5,43 @@
     min-height: 100vh;
 }
 
+/* Additional styles for portfolio layout */
+.portfolio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.row h2 {
+    margin: 0;
+}
+
+.image {
+    flex: 1;
+}
+
+.text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.text p {
+    margin: 0;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -126,8 +163,28 @@ body {
 
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 1vw; /* Responsive margin */
+        margin: 0 2.5vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 11px 7px 11px 7px;
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 8px 2px 8px 2px;
     }
 
 }

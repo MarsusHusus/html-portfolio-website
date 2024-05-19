@@ -98,23 +98,28 @@ body {
     grid-column: 2;
     margin: 0 2vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack items in a column */
+    gap: 20px; /* Add space between rows */
 }
 
 .project_article {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust width as needed */
-    margin-right: 20px; /* Adjust margin between items */
-    margin-bottom: 20px; /* Adjust margin bottom for spacing */
+    display: flex; /* Use flexbox to arrange image and text side by side */
+    align-items: center; /* Align items vertically centered */
+    gap: 20px; /* Space between image and text */
     box-sizing: border-box;
 }
 
-.project_article p {
-    margin-bottom: 2vh; /* Add some space between paragraph and image */
+.project_article img {
+    flex: 0 0 20%; /* Adjust the width of the image as needed */
+    max-width: 20%; /* Ensure the image does not exceed 20% of the container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.project_article img {
-    max-width: 100%; /* Ensure image doesn't exceed its container */
+.project_article p {
+    flex: 1; /* Allow the paragraph to take remaining space */
+    margin: 0; /* Remove default margin */
 }
+
 
 /* Content Styles */
 .img-text-container {
@@ -226,4 +231,31 @@ body {
     }
 }
 
+@media screen and (max-width: 920px) {
 
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 2.5vw; /* Responsive margin */
+        padding: 11px 7px 11px 7px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 11px 7px 11px 7px;
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0 0vw; /* Responsive margin */
+        padding: 8px 2px 8px 2px;
+    }
+}
