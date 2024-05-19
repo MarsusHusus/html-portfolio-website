@@ -63,7 +63,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg,rgb(224, 224, 249), rgb(255, 255, 255));
+    background: linear-gradient(45deg, rgb(224, 224, 249), rgb(255, 255, 255));
     background-size: 400% 400%; /* Ensure the gradient covers the whole area */
     animation: neon-animation 4s ease infinite; /* Adjust duration and timing function as needed */
     z-index: -1; /* Ensure the gradient stays behind the content */
@@ -81,9 +81,8 @@ body {
     }
 }
 
-
 .img {
-    height: 50vh; 
+    height: 50vh;
     width: 50vh;
     overflow: hidden;
     justify-content: center;
@@ -91,7 +90,7 @@ body {
     display: flex;
 }
 
-.img-and-btn{
+.img-and-btn {
     position: relative;
     display: flex;
     justify-content: center;
@@ -110,7 +109,7 @@ body {
     animation: fadeIn 1s ease forwards; /* Apply animation */
 }
 
-.social_buttons{
+.social_buttons {
     display: flex;
     margin-top: 1vh;
     padding-right: 10vw;
@@ -120,12 +119,12 @@ body {
 .social_buttons button {
     border: none;
     background-color: transparent;
-  }
-  
-  .social_buttons img {
+}
+
+.social_buttons img {
     width: 50px; /* Adjust the width to your preference */
     height: 50px; /* Set height relative to width */
-  }
+}
 
 @keyframes fadeIn {
     from {
@@ -169,24 +168,51 @@ article {
 .footer {
     background-color: #323232;
     padding: 1vh 5vw; /* Responsive padding */
-    text-align: center;
+    text-align: left; /* Align text to the left */
     color: white;
+    display: flex;
+    justify-content: space-between; /* Space between content */
+    align-items: center;
 }
 
-/* Style for the scroll to top button */
+.footer p {
+    margin: 0;
+    margin-bottom: 10px; /* Add space between p and buttons */
+}
+
+.footer .left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .social_buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer .social_button {
+    border: none;
+    background-color: transparent;
+    margin-right: 10px; /* Add margin for spacing */
+}
+
+.footer .social_button img {
+    width: 30px; /* Adjust the width */
+    height: 30px; /* Set height relative to width */
+}
+
 #scrollToTopBtn {
     border: none;
     background: none;
     color: white;
-    margin: 0 3vw; /* Use viewport width for margin */
     font-size: max(0.7rem, 1vw); /* Responsive font size */
-    padding: 8px 40px;
     background-color: #39444F;
     padding: 15px;
-    float: right;
+    margin-left: auto;
 }
 
-#scrollToTopBtn:hover{
+#scrollToTopBtn:hover {
     background-color: #5A5971;
     cursor: pointer;
 }
@@ -197,11 +223,10 @@ article {
         margin: 0 3vw; /* Use viewport width for margin */
         font-size: max(0.7rem, 1vw); /* Responsive font size */
         padding: 8px 20px;
-    }    
+    }
     article {
         margin-top: -15vh;
     }
-
 }
 
 @media screen and (max-width: 920px) {
@@ -222,11 +247,9 @@ article {
         margin: 0 2.5vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
     }
-
 }
 
 @media screen and (max-width: 600px) {
-
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 0vw; /* Responsive margin */
@@ -234,23 +257,19 @@ article {
     }
 
     .img {
-        height: 40vh; 
+        height: 40vh;
         width: 40vh;
         overflow: hidden;
         justify-content: center;
         align-items: center;
         display: flex;
     }
-    
-
 }
 
 @media screen and (max-width: 390px) {
-
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 0vw; /* Responsive margin */
         padding: 8px 2px 8px 2px;
     }
-
 }

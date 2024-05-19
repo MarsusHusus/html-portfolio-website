@@ -158,25 +158,51 @@ body {
     }
 }
 
-/* Footer Styles */
 .footer {
     background-color: #323232;
     padding: 1vh 5vw; /* Responsive padding */
-    text-align: center;
+    text-align: left; /* Align text to the left */
     color: white;
+    display: flex;
+    justify-content: space-between; /* Space between content */
+    align-items: center;
 }
 
-/* Style for the scroll to top button */
+.footer p {
+    margin: 0;
+    margin-bottom: 10px; /* Add space between p and buttons */
+}
+
+.footer .left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .social_buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer .social_button {
+    border: none;
+    background-color: transparent;
+    margin-right: 10px; /* Add margin for spacing */
+}
+
+.footer .social_button img {
+    width: 30px; /* Adjust the width */
+    height: 30px; /* Set height relative to width */
+}
+
 #scrollToTopBtn {
     border: none;
     background: none;
     color: white;
-    margin: 0 3vw;
-    font-size: max(0.7rem, 1vw);
-    padding: 8px 40px;
+    font-size: max(0.7rem, 1vw); /* Responsive font size */
     background-color: #39444F;
     padding: 15px;
-    float: right;
+    margin-left: auto;
 }
 
 #scrollToTopBtn:hover {

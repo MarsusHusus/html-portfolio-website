@@ -89,10 +89,10 @@ body {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 95vw; /* Take up 90% of viewport width */
-    bottom: calc(50px + 5px); /* Position from bottom of viewport */
+    width: 95vw; /* Take up 95% of viewport width */
+    bottom: 0; /* Align with the bottom of the viewport */
     background-color: #262439; /* Background color of the big box */
-    z-index: 0; /* Ensure the big box is behind other content */
+    z-index: 0; /* Ensure the big box is behind the footer */
     border-radius: 8px;
 }
 
@@ -159,8 +159,57 @@ body {
 
 .footer {
     background-color: #323232;
-    padding: 3vh 5vw; /* Responsive padding */
+    padding: 1vh 5vw; /* Responsive padding */
+    text-align: left; /* Align text to the left */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Space between content */
+    align-items: center;
+    z-index: 2; /* Ensure the footer is above the big box */
 }
+
+.footer p {
+    margin: 0;
+    margin-bottom: 10px; /* Add space between p and buttons */
+}
+
+.footer .left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .social_buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer .social_button {
+    border: none;
+    background-color: transparent;
+    margin-right: 10px; /* Add margin for spacing */
+}
+
+.footer .social_button img {
+    width: 30px; /* Adjust the width */
+    height: 30px; /* Set height relative to width */
+}
+
+#scrollToTopBtn {
+    border: none;
+    background: none;
+    color: white;
+    font-size: max(0.7rem, 1vw); /* Responsive font size */
+    background-color: #39444F;
+    padding: 15px;
+    margin-left: auto;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5A5971;
+    cursor: pointer;
+}
+
 
 /* Show the button when the user scrolls down */
 @media only screen and (min-width: 768px) {
