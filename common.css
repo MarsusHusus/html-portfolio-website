@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Footer CSS */
+.footer {
+    background-color: #323232;
+    padding: 1vh 5vw; /* Responsive padding */
+    text-align: left; /* Align text to the left */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Space between content */
+    align-items: center;
+}
+
+.footer p {
+    margin: 0;
+    margin-bottom: 10px; /* Add space between p and buttons */
+}
+
+.footer .left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .social_buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer .social_button {
+    border: none;
+    background-color: transparent;
+    margin-right: 10px; /* Add margin for spacing */
+}
+
+.footer .social_button img {
+    width: 30px; /* Adjust the width */
+    height: 30px; /* Set height relative to width */
+}
+
+#scrollToTopBtn {
+    border: none;
+    background: none;
+    color: white;
+    font-size: max(0.7rem, 1vw); /* Responsive font size */
+    background-color: #39444F;
+    padding: 15px;
+    margin-left: auto;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5A5971;
+    cursor: pointer;
+}
+
+/* Animation, Keysframes*/
+
+@keyframes neon-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(224, 224, 249), rgb(255, 255, 255));
+    background-size: 400% 400%; /* Ensure the gradient covers the whole area */
+    animation: neon-animation 4s ease infinite; /* Adjust duration and timing function as needed */
+    z-index: -1; /* Ensure the gradient stays behind the content */
+}
