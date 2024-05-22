@@ -63,28 +63,50 @@ body {
 /* Main Page Grid */
 .home {
     display: grid;
-    grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
+    padding: 0 5vw;
+    margin: 20px 0;
 }
 
-.row1 {
+/* About Me Section */
+.about-me {
+    display: flex;
+    align-items: center; /* Vertically center items */
     grid-column: 1 / -1;
-    padding: 0;
-    margin: 0 5vw;
-    box-sizing: border-box;
-    width: calc(100% - 10vw);
+    gap: 20px;
 }
 
+.about-me img {
+    width: 25%;
+    height: auto; /* Remove fixed height */
+    max-height: 100%; /* Ensure image doesn't exceed container height */
+    object-fit: cover;
+    opacity: 0; /* Initially hide the image */
+    animation: fadeIn 1s ease forwards; /* Apply animation */
+}
+
+
+.about-me div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+}
+
+.about-me h2 {
+    margin-top: 0;
+}
+
+
+/* Column 1 Styles */
 .column1 {
-    grid-column: 1;
-    margin-left: 3vw;
+    grid-column: 1 / 2;
 }
 
-/* Column 2 Stuff */
+/* Column 2 Styles */
 .column2 {
-    grid-column: 2;
-    margin: 0 2vw;
+    grid-column: 2 / 3;
     display: flex;
     flex-direction: column; /* Stack items in a column */
     gap: 20px; /* Add space between rows */
@@ -94,7 +116,6 @@ body {
     display: flex; /* Use flexbox to arrange image and text side by side */
     align-items: center; /* Align items vertically centered */
     gap: 20px; /* Space between image and text */
-    box-sizing: border-box;
 }
 
 .project_article img {
@@ -106,33 +127,6 @@ body {
 .project_article p {
     flex: 1; /* Allow the paragraph to take remaining space */
     margin: 0; /* Remove default margin */
-}
-
-
-/* Content Styles */
-.img-text-container {
-    display: flex;
-    align-items: center;
-    height: 40vh;
-    width: 90%;
-    overflow: hidden;
-}
-
-.profile-img {
-    height: 40vh;
-    width: auto;
-    object-fit: cover;
-    margin-right: 40px;
-    opacity: 0; /* Initially hide the image */
-    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease forwards; /* Apply animation */
-}
-
-.project-img {
-    height: 20vh; /* Set the height to 20% of the viewport height */
-    width: auto; /* Let the width adjust automatically */
-    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
-    object-fit: cover; /* Ensure the image covers the entire container */
 }
 
 @keyframes fadeIn {
@@ -159,6 +153,12 @@ body {
         font-size: max(0.7rem, 1vw);
         padding: 8px 20px;
     }
+
+    .about-me img {
+        width: 30%;
+        height: 90%;
+
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -173,12 +173,10 @@ body {
         margin-right: 0; /* Ensure no margin on the right when displayed as block */
     }
 
-    .img-text-container {
-        display: block;
-    }
-
-    .img-text-container {
-        height: auto; /* Reset the height */
+    .about-me {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text */
     }
 
     /* Ensure column1 and column2 stack under each other */
@@ -190,6 +188,12 @@ body {
     .column2 {
         grid-column: 1 / -1; /* Span full width */
         margin: 0; /* Reset margin */
+    }
+
+    .about-me img {
+        width: 60%;
+        height: 70%;
+
     }
 }
 

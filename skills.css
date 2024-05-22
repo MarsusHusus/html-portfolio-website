@@ -132,11 +132,13 @@ body {
     font-size: 24px;
 }
 
+.footer {
+    position: relative;
+}
+
 /* Show the button when the user scrolls down */
 @media only screen and (min-width: 768px) {
-    .footer {
-        position: relative;
-    }
+
 }
 
 

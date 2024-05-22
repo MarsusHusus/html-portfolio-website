@@ -222,7 +222,7 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 0vw; /* Responsive margin */

@@ -31,7 +31,7 @@ h2 {
 
 .image {
     flex: 1;
-    animation: fadeIn 1s ease forwards; /* Apply animation */
+    position: relative; /* Add relative positioning to position the link */
 }
 
 .text {
