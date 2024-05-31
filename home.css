@@ -13,7 +13,23 @@ body {
 .nav {
     background-color: #323232;
     color: white;
-    padding: 10px 0px 20px 0px;
+    padding: 10px 0; /* Adjust padding */
+    position: relative;
+}
+
+.nav .menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: max(1rem, 1vw); /* Responsive font size */
+    cursor: pointer;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .nav button {
@@ -43,9 +59,29 @@ body {
     cursor: pointer;
 }
 
-.nav button.menu-btn {
-    font-size: max(1rem, 1vw); /* Responsive font size */
+@media screen and (max-width: 600px) {
+    .nav-buttons {
+        display: none; /* Hide the buttons by default on narrow screens */
+        flex-direction: column;
+        width: 100%; /* Make the buttons take the full width */
+    }
+
+    .nav .menu-btn {
+        display: block; /* Show the burger menu button */
+    }
+
+    .nav-buttons.show {
+        display: flex; /* Show the buttons when the menu is active */
+    }
+
+    .nav button {
+        margin: 10px 0; /* Adjust margins for vertical layout */
+        font-size: 1.2rem; /* Increase font size for better readability */
+        padding: 10px 20px; /* Adjust padding */
+    }
 }
+
+/* Additional CSS for other page elements */
 
 .home {
     display: grid;
@@ -61,7 +97,7 @@ body {
     width: 50vh;
     overflow: hidden;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
 }
 
@@ -70,7 +106,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 100px auto;
+    margin: 0 auto; /* Center align */
     flex-direction: column;
 }
 
@@ -147,7 +183,7 @@ article {
         padding: 8px 20px;
     }
     article {
-        margin-top: -15vh;
+        margin-top: 0vh; /* Add margin-top to move the article lower */
     }
 }
 
@@ -174,8 +210,7 @@ article {
 @media screen and (max-width: 600px) {
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 0vw; /* Responsive margin */
-        padding: 11px 7px 11px 7px;
+        margin: 0; /* Responsive margin */
     }
 
     .img {
@@ -186,12 +221,31 @@ article {
         align-items: center;
         display: flex;
     }
+
+    .nav .menu-btn {
+        display: block; /* Show the burger menu button */
+        width: 30vw; /* Set width of burger button */
+        margin: 2vh;
+    }
+
+    .nav-buttons.show {
+        display: flex; /* Show the buttons when the menu is active */
+        height: auto; /* Reset height to auto */
+        
+    }
+
+    .nav button {
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        margin: 0; /* Responsive margin */
+        padding: 3vh 2px;
+    }
 }
+
 
 @media screen and (max-width: 390px) {
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 0vw; /* Responsive margin */
-        padding: 8px 2px 8px 2px;
+        margin: 0; /* Responsive margin */
+        padding: 8px 2px;
     }
 }

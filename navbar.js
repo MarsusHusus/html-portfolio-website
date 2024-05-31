@@ -1,4 +1,8 @@
-// JavaScript to handle button clicks
+document.getElementById("burgerBtn").addEventListener("click", function() {
+    var navButtons = document.getElementById("navButtons");
+    navButtons.classList.toggle("show");
+});
+
 document.getElementById("homeBtn").addEventListener("click", function() {
     window.location.href = "home.html"; // Change to your home page URL
 });
@@ -18,7 +22,6 @@ document.getElementById("portfolioBtn").addEventListener("click", function() {
 document.getElementById("contactBtn").addEventListener("click", function() {
     window.location.href = "contact.html"; // Change to your contact page URL
 });
-
 
 /* Style for the scroll to top button */
 document.addEventListener("DOMContentLoaded", function() {
