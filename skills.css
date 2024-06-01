@@ -1,28 +1,62 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
+.grid::after {
+    content: "";
+    position: fixed; /* Use fixed positioning to ensure it covers the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Cover the entire viewport height */
+    background: linear-gradient(45deg, rgb(199, 199, 230), rgb(255, 255, 255));
+    animation: neon-animation 4s ease infinite;
+    z-index: -1; /* Ensure the gradient stays behind the content */
 }
 
+/* Navigation Styles */
 .nav {
     background-color: #323232;
-    padding: 10px 0px 20px 0px;
+    color: white;
+    padding: 10px 0; /* Adjust padding */
+    position: relative;
+}
+
+.nav .menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: max(1rem, 1vw); /* Responsive font size */
+    cursor: pointer;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .nav button {
     border: none;
     background: none;
-    margin: 0 3vw; /* Use viewport width for margin */
+    color: white;
+    margin: 0 3.5vw; /* Use viewport width for margin */
     font-size: max(0.7rem, 1vw); /* Responsive font size */
     padding: 8px 40px;
-    color: white;
 }
 
 .nav .activated, .nav .not_activated {
@@ -43,10 +77,29 @@ body {
     cursor: pointer;
 }
 
-.nav button.menu-btn {
-    font-size: max(1rem, 1vw); /* Responsive font size */
+@media screen and (max-width: 600px) {
+    .nav-buttons {
+        display: none; /* Hide the buttons by default on narrow screens */
+        flex-direction: column;
+        width: 100%; /* Make the buttons take the full width */
+    }
+
+    .nav .menu-btn {
+        display: block; /* Show the burger menu button */
+    }
+
+    .nav-buttons.show {
+        display: flex; /* Show the buttons when the menu is active */
+    }
+
+    .nav button {
+        margin: 10px 0; /* Adjust margins for vertical layout */
+        font-size: 1.2rem; /* Increase font size for better readability */
+        padding: 10px 20px; /* Adjust padding */
+    }
 }
 
+/* Main Page Grid */
 .home {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -55,6 +108,18 @@ body {
     justify-content: center;
     align-items: center;
     padding: 15vh 5vw; /* Increased padding to make the main page higher */
+}
+
+@media screen and (max-width: 600px) {
+    .home {
+        grid-template-columns: 1fr; /* Stack columns vertically */
+        grid-template-rows: auto; /* Adjust rows automatically */
+        padding: 5vh 5vw; /* Adjust padding for narrower screens */
+    }
+
+    .skill-box {
+        margin-top: 5vh; /* Adjust top margin for narrower screens */
+    }
 }
 
 /* Add keyframes for the fade-in animation */
@@ -141,37 +206,37 @@ body {
 
 }
 
-
 @media screen and (max-width: 1200px) {
     .nav button {
         margin: 0 3vw; /* Use viewport width for margin */
         font-size: max(0.7rem, 1vw); /* Responsive font size */
         padding: 8px 20px;
-    }    
+    }
 }
 
 @media screen and (max-width: 920px) {
-
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 2.5vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
     }
-
 }
 
 @media screen and (max-width: 600px) {
-
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 0vw; /* Responsive margin */
         padding: 11px 7px 11px 7px;
     }
-    
+    .big-box {
+        display: none;
+    }
+    .skill-box {
+        margin-bottom: 10vh;
+    }
 }
 
 @media screen and (max-width: 390px) {
-
     .nav button {
         font-size: max(1rem, 1vw); /* Responsive font size */
         margin: 0 0vw; /* Responsive margin */
@@ -181,9 +246,17 @@ body {
 }
 
 @media screen and (max-height: 340px) {
-
     .big-box {
         display: none;
     }
+}
 
+/* Background Animation */
+@keyframes neon-animation {
+    0%, 100% {
+        background: linear-gradient(45deg, rgb(199, 199, 230), rgb(255, 255, 255));
+    }
+    50% {
+        background: linear-gradient(45deg, rgb(255, 255, 255), rgb(199, 199, 230));
+    }
 }

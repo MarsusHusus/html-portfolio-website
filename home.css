@@ -93,12 +93,14 @@ body {
 }
 
 .img {
-    height: 50vh;
+    height: 65vh;
     width: 50vh;
     overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
-    display: flex;
+    padding-top: 5vh; /* Adjust the value to move the image higher */
+
 }
 
 .img-and-btn {
@@ -214,7 +216,7 @@ article {
     }
 
     .img {
-        height: 40vh;
+        height: 45vh;
         width: 40vh;
         overflow: hidden;
         justify-content: center;

@@ -4,6 +4,25 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* NAV CSS */
+
+
+@media screen and (max-width: 600px) {
+    .nav .menu-btn {
+        display: block; /* Show the burger menu button */
+        display: block; /* Show the burger menu button */
+        width: 50vw; /* Set width of burger button */
+        margin: 2vh;
+        display: block; 
+    }
+    .nav button {
+        margin: 0 3vw; /* Use viewport width for margin */
+        font-size: max(1rem, 1vw); /* Responsive font size */
+        padding: 8px 20px;
+        height: 8vh;
+    }
+}
+
 /* Footer CSS */
 .footer {
     background-color: #323232;
