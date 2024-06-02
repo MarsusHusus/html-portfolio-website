@@ -31,21 +31,22 @@ h2 {
 
 .image {
     flex: 1;
-    position: relative; /* Add relative positioning to position the link */
+    position: relative;
 }
 
 .text {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 10px; /* Verringern Sie den Abstand zum nächsten Element */
 }
 
 .text p {
-    margin: 10vw;
+    margin: 10px; /* Reduzieren Sie den Abstand für einen kompakteren Look */
+    font-size: 1.2rem; /* Beispielwert, passen Sie die Schriftgröße nach Bedarf an */
 }
 
 .image img {
-    max-width: 75%;
-    height: auto;
+    max-width: 100%; /* Verwenden Sie die volle Breite des verfügbaren Raums */
+    height: auto; /* Bewahren Sie das Seitenverhältnis bei */
 }
 
 body {
@@ -79,8 +80,8 @@ body {
     border: none;
     background: none;
     color: white;
-    margin: 0 3.5vw; /* Use viewport width for margin */
-    font-size: max(0.7rem, 1vw); /* Responsive font size */
+    margin: 0 2vw; /* Reduzieren Sie den Abstand zwischen den Navigationsbuttons */
+    font-size: max(0.8rem, 1vw); /* Beispielwert, passen Sie die Schriftgröße nach Bedarf an */
     padding: 8px 40px;
 }
 
@@ -118,24 +119,9 @@ body {
 
 @media screen and (max-width: 1200px) {
     .nav button {
-        margin: 0 3vw; /* Use viewport width for margin */
-        font-size: max(0.7rem, 1vw); /* Responsive font size */
+        margin: 0 2vw; /* Reduzieren Sie den Abstand zwischen den Navigationsbuttons */
+        font-size: max(0.8rem, 1vw); /* Beispielwert, passen Sie die Schriftgröße nach Bedarf an */
         padding: 8px 20px;
-    }
-}
-
-@media screen and (max-width: 920px) {
-    .nav button {
-        font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 2.5vw; /* Responsive margin */
-        padding: 11px 7px 11px 7px;
-    }
-    .text p {
-        margin: 2vw;
-    }
-    .image img {
-        max-width: 100%;
-        height: auto;
     }
 }
 
@@ -179,4 +165,29 @@ body {
         opacity: 1; /* End with full opacity */
         transform: scale(1); /* End with original size */
     }
+}
+
+@media screen and (max-width: 600px) {
+    .row {
+        flex-direction: column; /* Ändern Sie die Anordnung auf Spalten für kleinere Bildschirme */
+        align-items: center; /* Zentrieren Sie die Elemente vertikal */
+    }
+
+    .image,
+    .text {
+        flex: 1; /* Lassen Sie die Bilder und Texte die volle Breite einnehmen */
+        margin: 0; /* Entfernen Sie den seitlichen Abstand */
+        text-align: center; /* Zentrieren Sie den Text */
+    }
+
+    .text p {
+        margin-top: 10px; /* Fügen Sie einen oberen Abstand zum Text hinzu */
+    }
+
+    .row h2 {
+        margin-top: -20px; /* Fügen Sie einen Abstand zwischen h2 und den Text-/Bildelementen hinzu */
+        margin-bottom: 0; /* Verhindern Sie einen zusätzlichen Zeilenumbruch unter dem h2 */
+    }
+    
+    
 }

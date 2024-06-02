@@ -76,6 +76,12 @@ body {
     cursor: pointer;
 }
 
+.footer .social_button img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1); /* Invert colors for dark theme */
+}
+
 /* Animation, Keysframes*/
 
 @keyframes neon-animation {
