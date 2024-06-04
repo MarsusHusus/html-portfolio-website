@@ -10,28 +10,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-@media screen and (max-width: 600px) {
-    .nav-buttons {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav .menu-btn {
-        display: block;
-    }
-
-    .nav-buttons.show {
-        display: flex;
-    }
-
-    .nav button {
-        margin: 10px 0;
-        font-size: 1.2rem;
-        padding: 10px 20px;
-    }
-}
-
 .home {
     display: grid;
     grid-template-columns: min-content auto;
@@ -122,14 +100,6 @@ article {
     animation: fadeIn 1s ease forwards;
 }
 
-@media screen and (max-width: 1200px) {
-    .nav button {
-        margin: 0 3vw;
-        font-size: max(0.7rem, 1vw);
-        padding: 8px 20px;
-    }
-}
-
 @media screen and (max-width: 920px) {
     .home {
         grid-template-columns: 1fr;
@@ -141,12 +111,6 @@ article {
 
     article {
         padding: 1vh 5vw;
-    }
-
-    .nav button {
-        font-size: max(1rem, 1vw);
-        margin: 0 2.5vw;
-        padding: 11px 7px;
     }
 
     .gallery {
@@ -162,23 +126,6 @@ article {
         justify-content: center;
         align-items: center;
         display: flex;
-    }
-
-    .nav .menu-btn {
-        display: block;
-        width: 30vw;
-        margin: 2vh;
-    }
-
-    .nav-buttons.show {
-        display: flex;
-        height: auto;
-        
-    }
-
-    .nav button {
-        font-size: max(1rem, 1vw);
-        padding: 3vh 2px;
     }
     
     .gallery {

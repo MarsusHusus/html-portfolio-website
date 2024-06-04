@@ -97,6 +97,12 @@ body {
         font-size: 1.2rem; /* Increase font size for better readability */
         padding: 10px 20px; /* Adjust padding */
     }
+
+    .nav .menu-btn {
+        display: block;
+        width: 30vw;
+        margin: 2vh;
+    }
 }
 
 /* Footer CSS */
@@ -172,15 +178,21 @@ body {
     }
 }
 
+.home {
+    padding-bottom: 110px; /* Add padding to the bottom to make space for the footer */
+}
+
 .home::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgb(224, 224, 249), rgb(255, 255, 255));
-    background-size: 400% 400%; /* Ensure the gradient covers the whole area */
+    background-size: 100% 100%; /* Ensure the gradient covers the whole area */
     animation: neon-animation 4s ease infinite; /* Adjust duration and timing function as needed */
     z-index: -1; /* Ensure the gradient stays behind the content */
 }

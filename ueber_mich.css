@@ -110,7 +110,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 110%;
+    max-width: 100%;
 }
 
 .project_article {
@@ -171,18 +171,6 @@ body {
     width: 40px;
     height: 40px;
     filter: invert(1);
-}
-
-.footer button#scrollToTopBtn {
-    background-color: #555;
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.footer button#scrollToTopBtn:hover {
-    background-color: #777;
 }
 
 /* Background Animation */
