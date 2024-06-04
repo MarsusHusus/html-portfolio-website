@@ -26,79 +26,13 @@ body {
     z-index: -1;
 }
 
-/* Navigation Styles */
-.nav {
-    background-color: #323232;
-    color: white;
-    padding: 10px 0;
-    position: relative;
-}
-
-.nav .menu-btn {
-    display: none;
-    border: none;
-    background: none;
-    color: white;
-    font-size: max(1rem, 1vw);
-    cursor: pointer;
-}
-
-.nav-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.nav button {
-    border: none;
-    background: none;
-    color: white;
-    margin: 0 3.5vw;
-    font-size: max(0.7rem, 1vw);
-    padding: 8px 40px;
-}
-
-.nav .activated, .nav .not_activated {
-    color: white;
-}
-
-.nav .activated {
-    background-color: #5A5971;
-    padding: 15px;
-}
-
-.nav .not_activated {
-    background-color: #39444F;
-}
-
-.nav button:hover {
-    background-color: #555;
-    cursor: pointer;
+.project_article iframe {
+    aspect-ratio: 16/9;
 }
 
 @media screen and (max-width: 700px) {
-    .nav-buttons {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav .menu-btn {
-        display: block;
-    }
-
-    .nav-buttons.show {
-        display: flex;
-    }
-
-    .nav button {
-        margin: 10px 0;
-        font-size: 1.2rem;
-        padding: 10px 20px;
-    }
-
     .project_article img,
-    .project_article video {
+    .project_article iframe {
         width: 100% !important; /* Adjust width to fill container */
         max-width: 100% !important; /* Allow image/video to resize */
         height: auto; /* Maintain aspect ratio */
@@ -110,19 +44,16 @@ body {
     .column2 .project_article {
         flex-direction: column;
         align-items: flex-start;
-        text-align: left;
     }
     
     .project_article img,
-    .project_article video {
+    .project_article iframe {
         width: 100%;
         max-width: none;
         height: auto;
         max-height: 50vh;
     }
-    
 }
-
 
 /* Main Page Grid */
 .home {
@@ -157,36 +88,21 @@ body {
 
 .about-me h2, .about-me p {
     margin: 0;
-    text-align: center; /* Center align text */
 }
 
-.about-me p {
-    max-width: 65%; /* Maximalbreite festlegen, damit der Text nicht komplett den Container ausfüllt */
-}
-
-@media screen and (max-width: 700px) {
-    .about-me {
-        align-items: flex-start; /* Align items to the start for stacking */
-    }
-
-    .about-me img {
-        width: 80%; /* Increase width further for smaller screens */
-    }
-
-    .about-me h2,
-    .about-me p {
-        text-align: left; /* Align text to the left */
-    }
+.about-me p, .about-me h2 {
+    max-width: 65%; /* Maximal width for text */
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 /* Content Columns */
 .column1 { 
     grid-column: 1 / 2; 
-    max-width: 80%; /* Maximalbreite festlegen, damit der Text nicht komplett den Container ausfüllt */
+    max-width: 80%; /* Maximal width for text */
 }
 
 .column2 {
@@ -217,7 +133,7 @@ body {
     object-fit: cover;
 }
 
-.project_article video {
+.project_article iframe {
     width: 50%;
     height: auto;
     max-height: 50vh;
@@ -287,8 +203,6 @@ body {
 @media screen and (min-width: 701px) {
     .about-me {
         flex-direction: row; /* Display items side by side */
-        justify-content: center; /* Center items horizontally */
-        align-items: center; /* Center items vertically */
         gap: 20px; /* Add spacing between items */
     }
 
@@ -301,5 +215,22 @@ body {
     .about-me p, .about-me h2 {
         max-width: 25vw; /* Reset max-width for text */
         text-align: left; /* Align text to the left */
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .home {
+        grid-template-columns: 1fr; /* Change to a single column layout */
+        gap: 10px; /* Optional: Adjust gap between rows if needed */
+    }
+    
+    .column1, .column2 {
+        grid-column: 1 / -1; /* Make both columns span the entire width */
+        max-width: 100%; /* Ensure they use full width of the container */
+    }
+
+    .about-me p, .about-me h2 {
+        text-align: left;
+        margin: 0 auto; /* Center align text */
     }
 }

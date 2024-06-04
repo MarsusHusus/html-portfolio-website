@@ -1,10 +1,3 @@
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
 .home {
     display: grid;
     grid-template-columns: 1fr;
@@ -23,6 +16,7 @@ h2 {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    max-width: 100vw;
 }
 
 .row h2 {
@@ -30,77 +24,38 @@ h2 {
 }
 
 .image {
-    flex: 1;
+    flex: 0.5; /* Reduced from 1 to 0.5 */
     position: relative;
+    max-width: 50%; /* Added max-width constraint */
 }
 
 .text {
     flex: 1;
-    margin-right: 10px; /* Verringern Sie den Abstand zum nächsten Element */
+    margin-right: 10px; /* Reduced spacing to the next element */
+    padding: 0vh 5vw 0vh 5vw ;
 }
 
 .text p {
-    margin: 10px; /* Reduzieren Sie den Abstand für einen kompakteren Look */
-    font-size: 1.2rem; /* Beispielwert, passen Sie die Schriftgröße nach Bedarf an */
+    margin: 10px; /* Reduced spacing for a more compact look */
+    font-size: 1.2rem; /* Example value, adjust font size as needed */
 }
 
 .image img {
-    max-width: 100%; /* Verwenden Sie die volle Breite des verfügbaren Raums */
-    height: auto; /* Bewahren Sie das Seitenverhältnis bei */
+    max-width: 100%; /* Use full width of available space */
+    height: auto; /* Preserve aspect ratio */
+}
+
+iframe{
+    max-width: 100%; /* Use full width of available space */
+    height: auto; /* Preserve aspect ratio */
+    border: 0;
+    margin-right: 40vw;
+    aspect-ratio: 16/9;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-.nav {
-    background-color: #323232;
-    color: white;
-    padding: 10px 0; /* Adjust padding */
-    position: relative;
-}
-
-.nav .menu-btn {
-    display: none;
-    border: none;
-    background: none;
-    color: white;
-    font-size: max(1rem, 1vw); /* Responsive font size */
-    cursor: pointer;
-}
-
-.nav-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.nav button {
-    border: none;
-    background: none;
-    color: white;
-    margin: 0 2vw; /* Reduzieren Sie den Abstand zwischen den Navigationsbuttons */
-    font-size: max(0.8rem, 1vw); /* Beispielwert, passen Sie die Schriftgröße nach Bedarf an */
-    padding: 8px 40px;
-}
-
-.nav .activated, .nav .not_activated {
-    color: white;
-}
-
-.nav .activated {
-    background-color: #5A5971;
-    padding: 15px;
-}
-
-.nav .not_activated {
-    background-color: #39444F;
-}
-
-.nav button:hover {
-    background-color: #555;
-    cursor: pointer;
 }
 
 .grid {
@@ -117,43 +72,6 @@ body {
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .nav button {
-        margin: 0 2vw; /* Reduzieren Sie den Abstand zwischen den Navigationsbuttons */
-        font-size: max(0.8rem, 1vw); /* Beispielwert, passen Sie die Schriftgröße nach Bedarf an */
-        padding: 8px 20px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .nav-buttons {
-        display: none; /* Hide the buttons by default on narrow screens */
-        flex-direction: column;
-        width: 100%; /* Make the buttons take the full width */
-    }
-
-    .nav .menu-btn {
-        display: block; /* Show the burger menu button */
-    }
-
-    .nav-buttons.show {
-        display: flex; /* Show the buttons when the menu is active */
-    }
-
-    .nav button {
-        margin: 10px 0; /* Adjust margins for vertical layout */
-        font-size: 1.2rem; /* Increase font size for better readability */
-        padding: 10px 20px; /* Adjust padding */
-    }
-}
-
-@media screen and (max-width: 390px) {
-    .nav button {
-        font-size: max(1rem, 1vw); /* Responsive font size */
-        margin: 0 0vw; /* Responsive margin */
-        padding: 8px 2px 8px 2px;
-    }
-}
 
 /* Keyframes for fade-in animation */
 @keyframes fadeIn {
@@ -169,25 +87,23 @@ body {
 
 @media screen and (max-width: 600px) {
     .row {
-        flex-direction: column; /* Ändern Sie die Anordnung auf Spalten für kleinere Bildschirme */
-        align-items: center; /* Zentrieren Sie die Elemente vertikal */
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center; /* Center items vertically */
     }
 
     .image,
     .text {
-        flex: 1; /* Lassen Sie die Bilder und Texte die volle Breite einnehmen */
-        margin: 0; /* Entfernen Sie den seitlichen Abstand */
-        text-align: center; /* Zentrieren Sie den Text */
+        flex: 1; /* Allow images and text to take full width */
+        margin: 0; /* Remove lateral spacing */
+        text-align: center; /* Center the text */
     }
 
     .text p {
-        margin-top: 10px; /* Fügen Sie einen oberen Abstand zum Text hinzu */
+        margin-top: 10px; /* Add top margin to the text */
     }
 
     .row h2 {
-        margin-top: -20px; /* Fügen Sie einen Abstand zwischen h2 und den Text-/Bildelementen hinzu */
-        margin-bottom: 0; /* Verhindern Sie einen zusätzlichen Zeilenumbruch unter dem h2 */
+        margin-top: -20px; /* Add spacing between h2 and text/image elements */
+        margin-bottom: 0; /* Prevent extra line break under h2 */
     }
-    
-    
 }

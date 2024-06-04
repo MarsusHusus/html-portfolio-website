@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="grid">
+        <!-- Home Button hat kein Piktogramm sondern Text damit die buttons einheitlicher sind-->
         <nav class="nav">
             <button id="burgerBtn" class="menu-btn">&#9776;</button> <!-- Burger menu button -->
             <div id="navButtons" class="nav-buttons">
@@ -24,21 +25,15 @@
             <div class="img-and-btn">
                 <div class="img"><img loading="lazy" src="P_M1.jpg" alt="logo"></div>
                 <div class="social_buttons">
-                    <button class="social_button">
-                        <a href="https://www.google.com/" target="_blank">
-                            <img loading="lazy" src="P_B1.png" alt="Google">
-                        </a>
-                    </button>
-                    <button class="social_button">
-                        <a href="contact.html" target="_blank">
-                            <img loading="lazy" src="P_B2.png" alt="Contact">
-                        </a>
-                    </button>
-                    <button class="social_button">
-                        <a href="https://www.youtube.com/@mastercontroller69/featured" target="_blank">
-                            <img loading="lazy" src="P_B3.png" alt="YouTube">
-                        </a>
-                    </button>
+                    <a href="https://www.google.com/" target="_blank" class="social_button">
+                        <img src="P_B1.png" alt="Google">
+                    </a>
+                    <a href="contact.html" target="_blank" class="social_button">
+                        <img src="P_B2.png" alt="Contact">
+                    </a>
+                    <a href="https://www.youtube.com/@mastercontroller69/featured" target="_blank" class="social_button">
+                        <img src="P_B3.png" alt="YouTube">
+                    </a>
                 </div>
             </div>
             <article>
@@ -51,10 +46,9 @@
         <div class="gallery">
             <!-- First Row -->
             <div class="gallery-column">
-                <video id="projectVideo" class="tall-video">
-                    <source src="HTML_Drohne.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QnuQ2EILLpE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <img loading="lazy" src="P_1.png" alt="Gallery Image 1">
                 <img loading="lazy" src="P_2.png" alt="Gallery Image 1">
             </div>
@@ -79,23 +73,18 @@
             <div class="left-content">
                 <p>Marvin Huber</p>
                 <div class="social_buttons">
-                    <button class="social_button">
-                        <a href="https://www.google.com/" target="_blank">
-                            <img loading="lazy" src="P_B1.png" alt="Google">
-                        </a>
-                    </button>
-                    <button class="social_button">
-                        <a href="contact.html" target="_blank">
-                            <img loading="lazy" src="P_B2.png" alt="Contact">
-                        </a>
-                    </button>
-                    <button class="social_button">
-                        <a href="https://www.youtube.com/@mastercontroller69/featured" target="_blank">
-                            <img loading="lazy" src="P_B3.png" alt="YouTube">
-                        </a>
-                    </button>
+                    <a href="https://www.google.com/" target="_blank" class="social_button">
+                        <img src="P_B1.png" alt="Google">
+                    </a>
+                    <a href="contact.html" target="_blank" class="social_button">
+                        <img src="P_B2.png" alt="Contact">
+                    </a>
+                    <a href="https://www.youtube.com/@mastercontroller69/featured" target="_blank" class="social_button">
+                        <img src="P_B3.png" alt="YouTube">
+                    </a>
                 </div>
             </div>
+            <!-- ScrollToTop ein Button anstelle eines Piktogramm damit es einheitlicher zum design der Website ist (header) -->
             <button id="scrollToTopBtn">Scroll To Top</button>
         </footer>        
     </div>
